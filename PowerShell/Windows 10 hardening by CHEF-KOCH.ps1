@@ -88,7 +88,7 @@ _|    _|    _|  _|  _|    _|        _|  _|  _|      _|_|_|_|  _|    _|  _|_|    
 $ErrorActionPreference = "Continue"
 
 # Check minimum PowerShell version first.
-#Requires -Version 6
+Requires -Version 5
 
 # DISM
 #Requires -Module Dism
@@ -1969,7 +1969,7 @@ New-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Search" 
 # Remove all apps except Windows Store incl. Xbox (Enterprise (N) LTSC 2019)
 # The Windows Store however does not run in the background since we enforce to disable all background apps.
 # (FIXME:) Add XBOX 360 driver workaround (1909 fixed? - needs more tests)
-Get-AppxPackage -AllUsers | Where-Object { $_.name –notlike "*store*" } | Remove-AppxPackage
+#Get-AppxPackage -AllUsers | Where-Object { $_.name –notlike "*store*" } | Remove-AppxPackage
 ##########################################################
 ######                  Start Menu                  ######
 ######            I prefer StartisBack++ (paid)     ######
